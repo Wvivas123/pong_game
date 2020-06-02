@@ -2,13 +2,21 @@ import turtle
 #import os
 
 print("Welcome to Pong!")
+print("---------------")
+print("|              ")
+print("       0       ")
+print("              |")
+print("---------------")
+
+
 player1_name = input("What is Player 1's Name? ")
 player2_name = input("What is Player 2's Name? ")
 
 
 wn = turtle.Screen()
 wn.title("Pong by William Vivas")
-wn.bgcolor('green')
+
+wn.bgcolor("green")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 
@@ -93,6 +101,7 @@ wn.onkeypress(paddle_b_down, 'Down')
 
 while True:
     wn.update()
+
 
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
