@@ -1,5 +1,5 @@
 import turtle
-#import os
+import os
 
 print("Welcome to Pong!")
 print("---------------")
@@ -109,12 +109,10 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        #os.system("afplay bounce.wav&")
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        #os.system("afplay bounce.wav&")
 
 
     if ball.xcor() > 390:
@@ -133,10 +131,13 @@ while True:
 
 
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
+        os.system("afplay Pong_Sound.wav&")
+
         ball.setx(340)
         ball.dx *= -1
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() -40):
+        os.system("afplay Pong_Sound.wav&")
         ball.setx(-340)
         ball.dx *= -1
 
