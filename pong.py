@@ -3,9 +3,9 @@ import os
 
 print("Welcome to Pong!")
 print("---------------")
-print("|              ")
+print(" |             ")
 print("       0       ")
-print("              |")
+print("             | ")
 print("---------------")
 
 
@@ -102,7 +102,6 @@ wn.onkeypress(paddle_b_down, 'Down')
 while True:
     wn.update()
 
-
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
@@ -121,6 +120,7 @@ while True:
         score_a += 1
         pen.clear()
         pen.write("{}: {} {}: {}".format(player1_name, score_a, player2_name, score_b), align="center", font=("Courier", 24, "normal"))
+        os.system("afplay Pong_Sound_Score.wav&")
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
@@ -128,6 +128,7 @@ while True:
         score_b += 1
         pen.clear()
         pen.write("{}: {} {}: {}".format(player1_name, score_a, player2_name, score_b), align="center", font=("Courier", 24, "normal"))
+        os.system("afplay Pong_Sound_Score.wav&")
 
 
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
